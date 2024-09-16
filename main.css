@@ -6,7 +6,7 @@ html, body {
 nav {
   background-color: rgb(18, 42, 83);
 }
-.nav-link {
+.nav-link, .navbar-toggler {
   color: rgb(255, 255, 255);
 }
 .b-example-divider {
@@ -59,6 +59,7 @@ nav {
   overflow:hidden;
   padding: 2rem; /* Ensure padding for all sections */
   background-color: rgb(18, 42, 83);
+  color: rgb(255, 255, 255);
 
 }
 
@@ -139,7 +140,7 @@ nav {
   text-align: center;
 }
 
-.alt-cover-container h2{
+.alt-cover-container p{
   font-size: 1rem; /* Adjust paragraph size for better readability */
   color: rgb(0, 0, 0);
   text-align: center;
@@ -151,8 +152,23 @@ nav {
   text-align: center;
 }
 .about-container p {
-  font-size: 2.5rem; /* Adjust font size for smaller screens */
+  font-size: 1rem; /* Adjust font size for smaller screens */
   color: rgb(0, 0, 0);
+}
+.skills-container h1
+{
+color: rgb(255, 255, 255);
+}
+
+.col h2
+{
+  font-size: 2rem;
+  text-align: center;
+}
+.col p
+{
+  font-size: 1rem;
+  text-align: center;
 }
 
 #contact-footer {
@@ -162,26 +178,34 @@ nav {
   
 }
 
-@media (min-width: 768px) {
-  .cover-container h1 {
-    font-size: 3.5rem; /* Larger font size for medium screens and up */
-  }
+.skills-container2 {
+  display: flex;
+  gap: 20px;
+}
 
-  .cover-container h2 {
-    font-size: 1.5rem; /* Adjust paragraph size for medium screens */
-  }
-  .alt-cover-container h1 {
-    font-size: 3.5rem; /* Adjust font size for smaller screens */
-   
-  }
-  
-  .alt-cover-container h2 {
-    font-size: 1.5rem; /* Adjust paragraph size for better readability */
-  }
-  .about-container h1 {
-    font-size: 3.5rem; /* Adjust paragraph size for better readability */
-  }      
-  .about-container p {
-    font-size: 1.5rem; /* Adjust paragraph size for better readability */
-  }   
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.skill img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+.skill:hover img {
+  transform: rotate(360deg);
+}
+
+.skill span {
+  font-size: 16px;
+  font-weight: bold;
 }
