@@ -13,9 +13,13 @@ nav {
 
 .navbar-brand {
 color: #ddd;
-
+padding-right: 2rem;
 font-weight: bold;
-margin-left: 30%;
+
+}
+.navbar-toggler{
+  position: absolute;
+  left: 0.1rem;
 }
 
 .navbar-brand :hover {
@@ -51,7 +55,7 @@ margin-left: 30%;
 }
 .alt-cover-container
 {
-  height: 100vh; /* 100% of the viewport height */
+  height: 70vh; /* 100% of the viewport height */
   width: 100vw;  /* 100% of the viewport width */
   display: flex;
   flex-direction: column;
@@ -76,7 +80,7 @@ margin-left: 30%;
 }
 
 .about-container{
-  height: 100vh; /* 100% of the viewport height */
+  height: 50vh; /* 100% of the viewport height */
   width: 100vw;  /* 100% of the viewport width */
   display: flex;
   flex-direction: column;
@@ -96,7 +100,7 @@ margin-left: 30%;
   background-color: rgb(18, 42, 83);
 }
 .skills-container {
-  height: 100vh; /* 100% of the viewport height */
+  height: 30vh; /* 100% of the viewport height */
   width: 100vw;  /* 100% of the viewport width */
   display: flex;
   flex-direction: column;
@@ -104,10 +108,22 @@ margin-left: 30%;
   overflow:hidden;
   padding: 2rem; /* Ensure padding for all sections */
   background-color: rgb(18, 42, 83);
+    white-space: nowrap;
+    position: relative;
 }
 
 .career-container{
 
+  height: 90vh; /* 100% of the viewport height */
+  width: 100vw;  /* 100% of the viewport width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow:hidden;
+  padding: 2rem; 
+  text-align: center;
+}
+.experience-section {
   height: 100vh; /* 100% of the viewport height */
   width: 100vw;  /* 100% of the viewport width */
   display: flex;
@@ -115,6 +131,7 @@ margin-left: 30%;
   align-items: center;
   overflow:hidden;
   padding: 2rem; 
+  text-align: center;
 }
 
 .projects-container{
@@ -167,7 +184,7 @@ margin-left: 30%;
   font-size: 1rem; /* Adjust font size for smaller screens */
   color: rgb(0, 0, 0);
 }
-.skills-container h1
+.skills-container
 {
 color: rgb(255, 255, 255);
 }
@@ -191,15 +208,19 @@ color: rgb(255, 255, 255);
 }
 
 .skills-container2 {
-  display: flex;
-  gap: 20px;
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+  scroll-behavior: smooth;
 }
 
 .skill {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
+  padding: 2rem;
+  text-align: center;
+  display: inline-block;
 }
 
 .skill img {
@@ -209,12 +230,9 @@ color: rgb(255, 255, 255);
   transition: transform 0.3s ease;
 }
 
-.skill:hover {
-  transform: scale(1.1);
-}
 
-.skill:hover img {
-  transform: rotate(360deg);
+.skill:hover  {
+  transform: scale3d(1.5,1.5,1.5)
 }
 
 .skill span {
@@ -222,28 +240,84 @@ color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
-.experience-section {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+@keyframes scroll {
+  0% {
+      transform: translateX(30%);
+  }
+  100% {
+      transform: translateX(-30%);
+  }
 }
+
 
 .experience {
   padding: 15px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; 
+  flex: 1 1 45%; /* Adjust the percentage to control the width of the columns */
+  margin: 10px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+
 .experience h2 {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-bottom: 5px;
 }
 
 .experience p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #555;
+}
+.experience-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 2.5rem; /* Space between items */
+  margin: 1rem;
+  padding: 1rem;
+  align-items: center;
+  overflow-x: hidden;
+  text-align: center;
+  text-wrap:wrap;
+  height: inherit;
+  }
+
+.jobs{
+
+  text-align: center;
+  border-radius: 25px;
+  border: 2px solid #9FA6B2;
+  padding: 20px;
+
+
+}
+
+.jobs:hover{
+  border-color:rgb(18, 42, 83);
+  color:rgb(18, 42, 83);;
+}
+
+#jobs-button{
+ 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .cover-container, .alt-cover-container, .alt-pjt-cover-container, .about-container, .contact-container, .skills-container, .career-container, .experience-section, .projects-container, ex {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .cover-container h1, .alt-cover-container h1, .about-container h1, .skills-container h1 {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+
+  .cover-container h2, .alt-cover-container p, .about-container p, .jobs, .skill{
+    font-size: 1rem; /* Smaller font size for smaller screens */
+  }
+
+  .experience-container {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+}
 }
